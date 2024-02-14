@@ -32,4 +32,23 @@ export class AuthService {
     let headers= new HttpHeaders().set('Authorization','Bearer '+this.token)
     return this.http.get("https://localhost:5001/api/Cats", {headers:headers})
   }
+
+  getUsers(){
+    let headers= new HttpHeaders().set('Authorization','Bearer '+this.token)
+    return this.http.get("https://localhost:5001/api/userlist", {headers:headers})    
+  }
+
+  getClaims(id:any){
+    let headers= new HttpHeaders().set('Authorization','Bearer '+this.token)
+    return this.http.get(" https://localhost:5001/api/userClaims/"+id, {headers:headers})  
+   
+  }
+  setClaims(id:any, claims:any){
+    let body={
+      id:id,
+      roles:claims
+    }
+    let headers= new HttpHeaders().set('Authorization','Bearer '+this.token)
+    return this.http.post(" https://localhost:5001/api/userClaims/",body, {headers:headers})     
+  }
 }
