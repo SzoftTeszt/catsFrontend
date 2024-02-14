@@ -10,7 +10,12 @@ export class HomeComponent {
   cats:any
   newUser:any={}
   loginUser:any={}
-  constructor(private auth:AuthService){}
+  constructor(private auth:AuthService){
+    this.loginUser={
+      "username": "Admin",
+      "password": "Almafa12;"
+    }
+  }
 
   register(){
 
