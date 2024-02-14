@@ -1,5 +1,60 @@
-<button (click)="register()" type="button" class="btn btn-primary">Register</button>
-<button (click)="login()" type="button" class="btn btn-primary">Login</button>
+{{newUser|json}}
+<div class="card" style="width: 18rem;">
+  
+    <div class="card-body">
+      <h5 class="card-title">Register</h5>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="newUser.username" type="text" class="form-control" id="username" placeholder="username">
+        <label for="username">username</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="newUser.firstName" type="text" class="form-control" id="firstName" placeholder="firstName">
+        <label for="firstName">firstName</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="newUser.lastName" type="text" class="form-control" id="lastName" placeholder="lastName">
+        <label for="lastName">lastName</label>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="newUser.email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+
+      <div class="form-floating">
+        <input [(ngModel)]="newUser.password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div> 
+      
+
+      <button (click)="register()" type="button" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+<div class="card" style="width: 18rem;">
+  
+    <div class="card-body">
+      <h5 class="card-title">Login</h5>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="loginUser.username" type="text" class="form-control" id="lusername" placeholder="username">
+        <label for="lusername">username</label>
+      </div>
+   
+      <div class="form-floating">
+        <input [(ngModel)]="loginUser.password" type="password" class="form-control" id="lfloatingPassword" placeholder="Password">
+        <label for="lfloatingPassword">Password</label>
+      </div> 
+      
+
+      <button (click)="login()" type="button" class="btn btn-primary">Login</button>
+    </div>
+  </div>
+
+
+
 
 <button (click)="getCats()" type="button" class="btn btn-primary">Cats</button>
 {{cats|json}}

@@ -8,6 +8,8 @@ import { AuthService } from '../auth.service';
 })
 export class HomeComponent {
   cats:any
+  newUser:any={}
+  loginUser:any={}
   constructor(private auth:AuthService){}
 
   register(){
@@ -19,14 +21,14 @@ export class HomeComponent {
       "email": "Admin@example.com",
       "password": "Almafa12;"
     }
-    this.auth.registration(user)
+    this.auth.registration(this.newUser)
   }
   login(){
     let user= {
       "username": "Admin",
       "password": "Almafa12;"
     }
-    this.auth.login(user)
+    this.auth.login(this.loginUser)
   }
 
   getCats(){
